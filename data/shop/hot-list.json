@@ -1,0 +1,50 @@
+{
+    "errno": 0,
+    "data": [
+        {
+            "id": 1,
+            "name": "家乐福",
+            "sales": 4221,
+            "expressLimit": 54,
+            "expressPrice": 12,
+            "slogan": "全场满200减30",
+            "imageUrl": "http://dummyimage.com/400x400"
+        },
+        {
+            "id": 2,
+            "name": "山姆超市",
+            "sales": 4202,
+            "expressLimit": 56,
+            "expressPrice": 15,
+            "slogan": "水果生鲜7折起",
+            "imageUrl": "http://dummyimage.com/400x400"
+        },
+        {
+            "id": 3,
+            "name": "华联",
+            "sales": 4146,
+            "expressLimit": 55,
+            "expressPrice": 15,
+            "slogan": "惊喜价格不容错过",
+            "imageUrl": "http://dummyimage.com/400x400"
+        },
+        {
+            "id": 4,
+            "name": "沃尔玛",
+            "sales": 3643,
+            "expressLimit": 41,
+            "expressPrice": 14,
+            "slogan": "全场满200减30",
+            "imageUrl": "http://dummyimage.com/400x400"
+        },
+        {
+            "id": 5,
+            "name": "大润发",
+            "sales": 5671,
+            "expressLimit": 48,
+            "expressPrice": 11,
+            "slogan": "全场八折",
+            "imageUrl": "http://dummyimage.com/400x400"
+        }
+    ]
+}

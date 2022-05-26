@@ -1,0 +1,9 @@
+{
+    "errno": 0,
+    "message": "message(when errno = 0)",
+    "token": "2293179598@qq.com",
+    "account": {
+        "userName": "尹娜",
+        "phone": 19851924532
+    }
+}

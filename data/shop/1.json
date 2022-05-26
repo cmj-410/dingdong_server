@@ -1,0 +1,122 @@
+{
+    "errno": 0,
+    "shopdata": {
+        "id": 1,
+        "name": "家乐福",
+        "sales": 4221,
+        "expressLimit": 54,
+        "expressPrice": 12,
+        "slogan": "全场满200减30",
+        "imageUrl": "http://dummyimage.com/400x400"
+    },
+    "contextMenu": [
+        "折扣",
+        "热销"
+    ],
+    "productInformation": [
+        [
+            {
+                "slogan": "sed sunt E",
+                "price": 90,
+                "productName": "参即表石口",
+                "sales": 23,
+                "productId": 2253,
+                "productDescription": "aliqua",
+                "favorableRate": 75,
+                "imgUrl": "http://dummyimage.com/400x400"
+            },
+            {
+                "slogan": "doeli",
+                "price": 4,
+                "productName": "间了火六始",
+                "sales": 54,
+                "productId": 2049,
+                "productDescription": "dolor in",
+                "favorableRate": 53,
+                "imgUrl": "http://dummyimage.com/400x400"
+            },
+            {
+                "slogan": "sint ad",
+                "price": 84,
+                "productName": "严土场一/严土场一",
+                "sales": 9,
+                "productId": 5245,
+                "productDescription": "occaecat",
+                "favorableRate": 30,
+                "imgUrl": "http://dummyimage.com/400x400"
+            },
+            {
+                "slogan": "consectet",
+                "price": 80,
+                "productName": "特布话周@特布话周",
+                "sales": 52,
+                "productId": 7892,
+                "productDescription": "id cupi",
+                "favorableRate": 38,
+                "imgUrl": "http://dummyimage.com/400x400"
+            },
+            {
+                "slogan": "ad ex com",
+                "price": 91,
+                "productName": "较按战局-较按战局",
+                "sales": 89,
+                "productId": 4298,
+                "productDescription": "dolore ",
+                "favorableRate": 78,
+                "imgUrl": "http://dummyimage.com/400x400"
+            }
+        ],
+        [
+            {
+                "slogan": "labor",
+                "price": 57,
+                "productName": "间写说可很前",
+                "sales": 87,
+                "productId": 7025,
+                "productDescription": "esse e",
+                "favorableRate": 54,
+                "imgUrl": "http://dummyimage.com/400x400"
+            },
+            {
+                "slogan": "laboris",
+                "price": 20,
+                "productName": "议单要最后",
+                "sales": 87,
+                "productId": 7307,
+                "productDescription": "sintve",
+                "favorableRate": 50,
+                "imgUrl": "http://dummyimage.com/400x400"
+            },
+            {
+                "slogan": "consec",
+                "price": 83,
+                "productName": "方活务六根物",
+                "sales": 90,
+                "productId": 5740,
+                "productDescription": "Lorem ani",
+                "favorableRate": 48,
+                "imgUrl": "http://dummyimage.com/400x400"
+            },
+            {
+                "slogan": "ut pr",
+                "price": 81,
+                "productName": "青好必志素过",
+                "sales": 6,
+                "productId": 7443,
+                "productDescription": "id ut elit",
+                "favorableRate": 6,
+                "imgUrl": "http://dummyimage.com/400x400"
+            },
+            {
+                "slogan": "Except",
+                "price": 78,
+                "productName": "三石天红/三石天红",
+                "sales": 97,
+                "productId": 9877,
+                "productDescription": "sed occa",
+                "favorableRate": 96,
+                "imgUrl": "http://dummyimage.com/400x400"
+            }
+        ]
+    ]
+}
