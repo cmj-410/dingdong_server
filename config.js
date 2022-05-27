@@ -16,8 +16,11 @@ module.exports = {
             method: 'GET'
         }, {
             path: '/address/info',
-            method: 'PATCH'
+            method: 'POST'
         }, {
+            path: '/address/info',
+            method: 'OPTIONS'
+        },{
             path: '/shop/hot-list',
             method: 'GET'
         }, {

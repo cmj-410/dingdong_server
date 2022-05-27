@@ -5,8 +5,10 @@ const config = require('./config')
 const server = http.createServer((req, res) => {
     const url = req.url
     const method = req.method
-    const [path, queryStr] = url.split('?')
-    const params = new URLSearchParams(queryStr)
+    const path = url.split('?')[0]
+    // const [path, queryStr] = url.split('?')
+    // const params = new URLSearchParams(queryStr)
+    // console.log(path, Object.keys(params))
 
     // 已经配置的路由
     const routeList = config.routes
@@ -39,66 +41,67 @@ const server = http.createServer((req, res) => {
         res.end()
     }
     if (method === 'POST'){
-        let bodyStr = ''
-        req.on('data', chunk => {
-            bodyStr += chunk.toString()
-        })
-        req.on('end', () => {
-            const body = JSON.parse(bodyStr)
-            const name = body.account
-            const password = body.password
-            let dataurl
-            if (name === config.account.name && password === config.account.password){
-                // 根据请求地址到data中去找
-                dataurl = 'data' + havePath.path + '_success' + '.json'
-            } else {
-                dataurl = 'data' + havePath.path + '_fail' + '.json'
-            }
-            const rawdata = fs.readFileSync(dataurl)
-            res.writeHead(200, {
-                'Content-Type': 'application/json',
-                // 允许跨域
-                'Access-Control-Allow-Origin': '*'
+        // post登录
+        if (havePath.path === '/user/login'){
+            let bodyStr = ''
+            req.on('data', chunk => {
+                bodyStr += chunk.toString()
             })
-            res.write(rawdata)
-            res.end()
-        })
+            req.on('end', () => {
+                const body = JSON.parse(bodyStr)
+                const name = body.account
+                const password = body.password
+                let dataurl
+                if (name === config.account.name && password === config.account.password){
+                    // 根据请求地址到data中去找
+                    dataurl = 'data' + havePath.path + '_success' + '.json'
+                } else {
+                    dataurl = 'data' + havePath.path + '_fail' + '.json'
+                }
+                const rawdata = fs.readFileSync(dataurl)
+                res.writeHead(200, {
+                    'Content-Type': 'application/json',
+                    // 允许跨域
+                    'Access-Control-Allow-Origin': '*'
+                })
+                res.write(rawdata)
+                res.end()
+            })
+        } else {
+            // 写入新地址
+            if (havePath.path === '/address/info'){
+                let bodyStr = ''
+                req.on('data', chunk => {
+                    bodyStr += chunk.toString()
+                })
+                req.on('end', () => {
+                    const body = JSON.parse(bodyStr)
+                    const fileUrl = 'data/address/info.json'
+                    const rawdata = fs.readFileSync(fileUrl)
+                    const jsonData = JSON.parse(rawdata)
+                    jsonData.data.push(body)
+                    fs.writeFile(fileUrl, JSON.stringify(jsonData, null, 2), e => {
+                        if(e){
+                            console.log(e.message)
+                        }
+                    })
+                    res.writeHead(200, {
+                        'Content-Type': 'application/json',
+                        // 允许跨域
+                        'Access-Control-Allow-Origin': '*'
+                    })
+                    res.end()
+                })
+            }
+        }
     }
     // 为了post跨域，需要配置options
     if (method === 'OPTIONS'){
         res.writeHead(200, {
+            'Access-Control-Allow-Origin': '*',
             'Access-Control-Allow-Headers': 'Content-Type',
-            // 'Access-Control-Allow-Methods': 'POST', 
-            'Access-Control-Allow-Methods': 'GET,POST,PATCH',
-            'Access-Control-Allow-Origin': '*'
-            // 'Access-Control-Allow-Origin': 'http://192.168.0.101'
         })
         res.end()
-    }
-    if (method === 'PATCH'){
-        let bodyStr = ''
-        req.on('data', chunk => {
-            bodyStr += chunk.toString()
-        })
-        req.on('end', () => {
-            const body = JSON.parse(bodyStr)
-            const fileUrl = 'data' + havePath.path + '.json'
-            const rawdata = fs.readFileSync(fileUrl)
-            const jsonData = JSON.parse(rawdata)
-            jsonData.data.push(body)
-            fs.writeFile(fileUrl, JSON.stringify(jsonData, null, 2), e => {
-                if(e){
-                    console.log(e.message)
-                }
-            })
-            res.writeHead(200, {
-                'Content-Type': 'application/json',
-                // 允许跨域
-                'Access-Control-Allow-Origin': '*',
-                // 'Access-Control-Allow-Methods': 'PATCH',
-            })
-            res.end()
-        })
     }
 })
 
